@@ -1,0 +1,28 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: 5
+
+development:
+  <<: *default
+  database: plethora_development
+
+  #username: plethora
+  #password:
+
+test:
+  <<: *default
+  database: plethora_test
+
+# Herou:
+#   DATABASE_URL="postgres://myuser:mypass@localhost/somedatabase"
+#   production:
+#     url: <%= ENV['DATABASE_URL'] %>
+#
+production:
+  <<: *default
+  database: plethora_production
+  username: plethora
+  password: <%= ENV['PLETHORA_DATABASE_PASSWORD'] %>
