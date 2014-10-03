@@ -5,3 +5,5 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Word.find_or_create_by(root: 'plethora', text: 'plethora')
+Word.find_or_create_by(root: 'plethora', text: 'plentiful')
