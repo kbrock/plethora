@@ -3,7 +3,7 @@ class CreateWords < ActiveRecord::Migration
     create_table :words do |t|
       t.string :root
       t.string :text
-      t.boolean :needs_a, default: false
+      t.string :pos, default: "noun"
       t.timestamps
     end
 

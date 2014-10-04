@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
+  resources :sentences
   resources :words
 
-  root :to => "phrase#index"
+  root :to => "phrases#index"
 end

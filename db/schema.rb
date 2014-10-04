@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20141003015422) do
   create_table "words", force: true do |t|
     t.string   "root"
     t.string   "text"
-    t.boolean  "needs_a",    default: false
+    t.string   "pos",        default: "noun"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
