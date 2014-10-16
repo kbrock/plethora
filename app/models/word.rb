@@ -4,7 +4,8 @@ class Word < ActiveRecord::Base
   # the root word
   validates :root, presence: true
   # the alternate word
-  validates :text, presence:true, uniqueness: true
+  validates :text, presence: true, uniqueness: true
+  validates :poc, presence: true
 
   before_validation do
     self.root = self.root.downcase.strip if self.root
@@ -13,6 +14,10 @@ class Word < ActiveRecord::Base
 
   def adj
     Translator.translate(pos, "adj", text)
+  end
+
+  def noun
+    Translator.translate(pos, "noun", text)
   end
 
   def random

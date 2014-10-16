@@ -6,16 +6,12 @@ describe Word do
     assert_equal "word", subject.text
   end
 
-  it "strip downcases root" do
-    subject = Word.new(root: "  WOrd  ").tap { |s| s.valid? }
-    assert_equal "word", subject.root
-  end
-
-  test "#to_s appends a" do
+  # move to translate?
+  test "noun to a turns into prepositional clause" do
     assert_equal "a word of", Word.new(text: "word", pos: "noun").adj
   end
 
-  test "#to_s skips a" do
+  test "adj to adj is a nop" do
     assert_equal "stuff", Word.new(text: "stuff", pos: "adj").adj
   end
 
